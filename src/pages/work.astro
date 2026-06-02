@@ -9,7 +9,7 @@ const roles = [
     title: 'Lead AI Analyst, Forward Deployed Engineering',
     location: 'Worlds.io · Venture-funded industrial-AI platform',
     narrative:
-      "Promoted into the role; I own the analysis, monitoring, and iteration of every production and pilot AI solution in the company's portfolio. Single-handedly designed, built, and deployed an internal platform that consolidates the entire analyst day-to-day — built end-to-end with agentic AI development and now the team's primary working surface. Stood up the deployment stack across Azure, Render, and Supabase. Embed directly with customers as part of the FDE team — translating SOPs into AI-readable data, debugging drift in the field, shipping production fixes in the same engagement.",
+      "Promoted into the role; I help own the analysis, monitoring, and iteration of every production and pilot AI solution in the company's portfolio. Designed and built an internal platform — end to end with agentic AI development — that's become the analyst team's primary working surface. Stood up the deployment stack across Azure, Render, and Supabase. Embed directly with customers as part of the FDE team — translating SOPs into AI-readable data, debugging drift in the field, and shipping production fixes alongside engineering in the same engagement.",
     stack: ['Azure', 'Render', 'Supabase', 'Agentic AI', 'FastAPI', 'Python', 'UI / UX'],
   },
   {
@@ -60,17 +60,14 @@ const credentials = [
   <!-- Page header -->
   <header class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 pb-16 md:pb-20">
     <div class="md:col-span-3">
-      <p class="reveal font-mono text-mono-xs uppercase tracking-[0.2em] text-accent">File 02</p>
-      <p class="reveal mt-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300" style="transition-delay: 80ms;">
-        Work history
-      </p>
+      <p class="reveal font-mono text-mono-xs uppercase tracking-[0.2em] text-coral">Work</p>
     </div>
     <div class="md:col-span-9">
-      <h1 class="reveal font-display font-light text-fluid-3xl tracking-tightest text-ink-50 leading-[0.95]">
-        Where I've been<br /><span class="italic">paid to build.</span>
+      <h1 class="reveal font-display font-light text-fluid-3xl tracking-tightest text-cream-900 leading-[0.95]">
+        Where I've been.
       </h1>
-      <p class="reveal mt-6 max-w-readable text-fluid-lg text-ink-100 leading-relaxed" style="transition-delay: 120ms;">
-        A short list. Recent first. Each role with the real shape of the work — not the LinkedIn version.
+      <p class="reveal mt-6 max-w-readable text-fluid-lg text-cream-800 leading-relaxed" style="transition-delay: 120ms;">
+        A short list of places I've been lucky enough to do interesting work. Recent first.
       </p>
     </div>
   </header>
@@ -79,34 +76,34 @@ const credentials = [
   <section>
     {
       roles.map((role) => (
-        <article class="reveal grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10 py-12 border-t border-ink-700">
+        <article class="reveal grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10 py-12 border-t border-cream-200">
           <aside class="md:col-span-3 flex flex-col gap-3 md:sticky md:top-10 md:self-start">
             <div class="flex items-baseline gap-3">
-              <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-accent">№ {role.index}</span>
+              <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-coral">№ {role.index}</span>
             </div>
-            <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300 leading-relaxed">
+            <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500 leading-relaxed">
               {role.dates}
             </p>
           </aside>
 
           <div class="md:col-span-9 flex flex-col gap-5">
             <header>
-              <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300">{role.company}</p>
-              <h2 class="mt-2 font-display font-light text-fluid-2xl text-ink-50 leading-[1.05] tracking-tightest max-w-[28ch]">
+              <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500">{role.company}</p>
+              <h2 class="mt-2 font-display font-light text-fluid-2xl text-cream-900 leading-[1.05] tracking-tightest max-w-[28ch]">
                 {role.title}
               </h2>
-              <p class="mt-3 font-mono text-mono-xs uppercase tracking-[0.16em] text-ink-400">
+              <p class="mt-3 font-mono text-mono-xs uppercase tracking-[0.16em] text-cream-400">
                 {role.location}
               </p>
             </header>
 
-            <p class="max-w-readable text-fluid-base text-ink-100 leading-relaxed">{role.narrative}</p>
+            <p class="max-w-readable text-fluid-base text-cream-800 leading-relaxed">{role.narrative}</p>
 
-            <p class="pt-2 font-mono text-mono-xs uppercase tracking-[0.16em] text-ink-300 leading-relaxed">
+            <p class="pt-2 font-mono text-mono-xs uppercase tracking-[0.16em] text-cream-500 leading-relaxed">
               {role.stack.map((s, i) => (
                 <>
                   <span>{s}</span>
-                  {i < role.stack.length - 1 && <span class="text-ink-500 mx-2">·</span>}
+                  {i < role.stack.length - 1 && <span class="text-cream-300 mx-2">·</span>}
                 </>
               ))}
             </p>
@@ -117,11 +114,11 @@ const credentials = [
   </section>
 
   <!-- Education + Certs -->
-  <section class="mt-20 md:mt-28 border-t border-ink-700 pt-16">
+  <section class="mt-20 md:mt-28 border-t border-cream-200 pt-16">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
       <div class="md:col-span-3">
-        <p class="reveal font-mono text-mono-xs uppercase tracking-[0.18em] text-accent">Addendum</p>
-        <h2 class="reveal mt-3 font-display font-light text-fluid-xl tracking-tightest text-ink-50">
+        <p class="reveal font-mono text-mono-xs uppercase tracking-[0.18em] text-coral">Addendum</p>
+        <h2 class="reveal mt-3 font-display font-light text-fluid-xl tracking-tightest text-cream-900">
           Education<br />& certs.
         </h2>
       </div>
@@ -129,15 +126,15 @@ const credentials = [
         {
           credentials.map((c, i) => (
             <li
-              class="reveal grid grid-cols-12 gap-3 md:gap-6 items-baseline border-t border-ink-700 py-5"
+              class="reveal grid grid-cols-12 gap-3 md:gap-6 items-baseline border-t border-cream-200 py-5"
               style={`transition-delay: ${i * 60}ms;`}
             >
-              <span class="col-span-12 sm:col-span-3 md:col-span-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300">
+              <span class="col-span-12 sm:col-span-3 md:col-span-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500">
                 {c.date}
               </span>
-              <p class="col-span-12 sm:col-span-9 md:col-span-10 text-fluid-base text-ink-100 leading-relaxed">
-                <span class="text-ink-50">{c.label}</span>
-                <span class="text-ink-400"> — {c.meta}</span>
+              <p class="col-span-12 sm:col-span-9 md:col-span-10 text-fluid-base text-cream-800 leading-relaxed">
+                <span class="text-cream-900">{c.label}</span>
+                <span class="text-cream-400"> — {c.meta}</span>
               </p>
             </li>
           ))

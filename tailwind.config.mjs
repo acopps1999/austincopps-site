@@ -4,24 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: '#0a0a0a',
-          50: '#f4f1ea',
-          100: '#e8e4dc',
-          200: '#c9c3b6',
-          300: '#9a9388',
-          400: '#6b665d',
-          500: '#3f3c36',
-          600: '#262421',
-          700: '#1a1816',
-          800: '#121110',
-          900: '#0a0a0a',
-          950: '#050505',
+        // Warm cream palette: 50 = lightest (page bg), 900 = deepest (primary text)
+        cream: {
+          DEFAULT: '#fbf6ea',
+          50: '#fdf9ee',
+          100: '#f6efdc',
+          200: '#ecdfc2',
+          300: '#d6c39d',
+          400: '#a99c7e',
+          500: '#7d715b',
+          600: '#5a4f3d',
+          700: '#3d3527',
+          800: '#251f15',
+          900: '#1b160e',
         },
-        accent: {
-          DEFAULT: '#00ff88',
-          dim: '#00cc6e',
+        // Primary accent — vivid sunset coral. Warm, optimistic, confident.
+        coral: {
+          DEFAULT: '#df5a37',
+          dim: '#b9482a',
         },
+        // Secondary warm accent — sun-yellow for occasional moments
+        sun: '#e8a64a',
       },
       fontFamily: {
         display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
@@ -29,7 +32,6 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       fontSize: {
-        // Fluid type scale using clamp()
         'mono-xs': ['0.6875rem', { lineHeight: '1.4', letterSpacing: '0.12em' }],
         'mono-sm': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.1em' }],
         'fluid-sm': ['clamp(0.875rem, 0.85rem + 0.1vw, 0.95rem)', { lineHeight: '1.6' }],

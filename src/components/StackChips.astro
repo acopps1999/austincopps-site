@@ -14,11 +14,11 @@ const { items, variant = 'line' } = Astro.props;
       ))}
     </ul>
   ) : (
-    <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300 leading-relaxed">
+    <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500 leading-relaxed">
       {items.map((it, i) => (
         <>
           <span>{it}</span>
-          {i < items.length - 1 && <span class="text-ink-500 mx-2">·</span>}
+          {i < items.length - 1 && <span class="text-cream-300 mx-2">·</span>}
         </>
       ))}
     </p>

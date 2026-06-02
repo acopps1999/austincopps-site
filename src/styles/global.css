@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: theme('colors.ink.900');
-    color: theme('colors.ink.50');
+    background-color: theme('colors.cream.50');
+    color: theme('colors.cream.900');
     font-family: theme('fontFamily.sans');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,33 +18,34 @@
   }
 
   body {
-    background-color: theme('colors.ink.900');
-    color: theme('colors.ink.50');
+    background-color: theme('colors.cream.50');
+    color: theme('colors.cream.900');
     min-height: 100dvh;
 
-    /* Subtle film-grain texture so the dark surface isn't dead-flat */
+    /* Soft warm sunrise wash from the top — gives the cream surface life
+       without becoming a gradient mural. */
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 255, 136, 0.04), transparent 60%),
-      url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.92  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    background-blend-mode: normal, overlay;
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232, 166, 74, 0.18), transparent 65%),
+      radial-gradient(ellipse 70% 45% at 90% 5%, rgba(223, 90, 55, 0.10), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   ::selection {
-    background-color: theme('colors.accent.DEFAULT');
-    color: theme('colors.ink.900');
+    background-color: theme('colors.coral.DEFAULT');
+    color: theme('colors.cream.50');
   }
 
-  /* Subtle focus ring in accent */
   :focus-visible {
-    outline: 1px solid theme('colors.accent.DEFAULT');
+    outline: 1px solid theme('colors.coral.DEFAULT');
     outline-offset: 3px;
   }
 }
 
 @layer components {
-  /* Visible by default; the layout script adds `.js-reveal` on <html>
-     once the IntersectionObserver is wired, which hides un-revealed
-     items so the entrance animation has somewhere to come from. */
+  /* Reveals are visible by default. The layout script adds `.js-reveal`
+     on <html> after wiring an IntersectionObserver, which hides
+     un-revealed items so they can animate in. */
   .reveal {
     opacity: 1;
     transform: none;
@@ -62,11 +63,11 @@
     transform: translateY(0);
   }
 
-  /* Animated underline for text links */
+  /* Animated underline link */
   .link {
     position: relative;
     display: inline-block;
-    color: theme('colors.ink.50');
+    color: theme('colors.cream.900');
     text-decoration: none;
     transition: color 200ms ease;
   }
@@ -83,50 +84,24 @@
     transition: transform 380ms cubic-bezier(0.2, 0.6, 0.2, 1);
   }
   .link:hover {
-    color: theme('colors.accent.DEFAULT');
+    color: theme('colors.coral.DEFAULT');
   }
   .link:hover::after {
     transform-origin: left;
     transform: scaleX(1);
-    background-color: theme('colors.accent.DEFAULT');
+    background-color: theme('colors.coral.DEFAULT');
   }
 
-  /* Hairline rule used between sections / placards */
+  /* Soft hairline rule */
   .hairline {
     height: 1px;
     background: linear-gradient(
       to right,
       transparent,
-      theme('colors.ink.500') 10%,
-      theme('colors.ink.500') 90%,
+      theme('colors.cream.300') 10%,
+      theme('colors.cream.300') 90%,
       transparent
     );
-  }
-
-  /* Stack chip — small mono badge with character-spacing */
-  .chip {
-    display: inline-block;
-    font-family: theme('fontFamily.mono');
-    font-size: 0.6875rem;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: theme('colors.ink.300');
-    padding: 0.35rem 0.55rem;
-    border: 1px solid theme('colors.ink.600');
-    border-radius: 2px;
-    transition: border-color 200ms ease, color 200ms ease;
-  }
-  .chip:hover {
-    border-color: theme('colors.accent.DEFAULT');
-    color: theme('colors.accent.DEFAULT');
-  }
-
-  /* Inline dotted separator for mono lines */
-  .dotsep::before {
-    content: '·';
-    margin: 0 0.6em;
-    color: theme('colors.ink.400');
   }
 }
 

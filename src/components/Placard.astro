@@ -13,18 +13,18 @@ interface Props {
 const { index, dates, tag, title, stack, pull, pullLabel } = Astro.props;
 ---
 
-<article class="reveal grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10 py-12 border-t border-ink-700">
+<article class="reveal grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10 py-12 border-t border-cream-200">
   <!-- Left rail: index + dates + tag -->
   <aside class="md:col-span-3 lg:col-span-3 flex flex-col gap-3 md:sticky md:top-10 md:self-start">
     <div class="flex items-baseline gap-3">
-      <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-accent">№ {index}</span>
+      <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-coral">№ {index}</span>
       {tag && (
-        <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300">
+        <span class="font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500">
           {tag}
         </span>
       )}
     </div>
-    <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300 leading-relaxed">
+    <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-500 leading-relaxed">
       {dates}
     </p>
   </aside>
@@ -32,22 +32,22 @@ const { index, dates, tag, title, stack, pull, pullLabel } = Astro.props;
   <!-- Right content -->
   <div class="md:col-span-9 lg:col-span-9 flex flex-col gap-5">
     <h2
-      class="font-display font-light text-fluid-2xl text-ink-50 leading-[1.05] tracking-tightest max-w-[28ch]"
+      class="font-display font-light text-fluid-2xl text-cream-900 leading-[1.05] tracking-tightest max-w-[28ch]"
     >
       <slot name="title">{title}</slot>
     </h2>
 
-    <div class="max-w-readable text-fluid-base text-ink-100 leading-relaxed">
+    <div class="max-w-readable text-fluid-base text-cream-800 leading-relaxed">
       <slot />
     </div>
 
     {pull && (
-      <figure class="mt-2 mb-1 max-w-readable border-l border-accent pl-5">
-        <blockquote class="font-display font-light italic text-fluid-lg text-ink-50 leading-tight">
+      <figure class="mt-2 mb-1 max-w-readable border-l border-coral pl-5">
+        <blockquote class="font-display font-light italic text-fluid-lg text-cream-900 leading-tight">
           {pull}
         </blockquote>
         {pullLabel && (
-          <figcaption class="mt-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-400">
+          <figcaption class="mt-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-cream-400">
             — {pullLabel}
           </figcaption>
         )}
@@ -55,11 +55,11 @@ const { index, dates, tag, title, stack, pull, pullLabel } = Astro.props;
     )}
 
     <div class="pt-2">
-      <p class="font-mono text-mono-xs uppercase tracking-[0.16em] text-ink-300 leading-relaxed">
+      <p class="font-mono text-mono-xs uppercase tracking-[0.16em] text-cream-500 leading-relaxed">
         {stack.map((s, i) => (
           <>
             <span>{s}</span>
-            {i < stack.length - 1 && <span class="text-ink-500 mx-2">·</span>}
+            {i < stack.length - 1 && <span class="text-cream-300 mx-2">·</span>}
           </>
         ))}
       </p>

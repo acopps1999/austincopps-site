@@ -29,7 +29,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#fdf9ee" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -50,7 +50,7 @@ const nav = [
   <body class="min-h-dvh antialiased">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-ink-900 focus:text-ink-50 focus:px-3 focus:py-2 focus:border focus:border-accent"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-cream-50 focus:text-cream-900 focus:px-3 focus:py-2 focus:border focus:border-coral"
     >
       Skip to content
     </a>
@@ -61,10 +61,10 @@ const nav = [
       >
         <a
           href="/"
-          class="font-mono text-mono-sm uppercase tracking-[0.18em] text-ink-100 hover:text-accent transition-colors"
+          class="font-mono text-mono-sm uppercase tracking-[0.18em] text-cream-800 hover:text-coral transition-colors"
         >
           Austin&nbsp;Copps
-          <span class="text-ink-400 ml-2">/&nbsp;portfolio</span>
+          <span class="text-cream-400 ml-2">/&nbsp;portfolio</span>
         </a>
 
         <nav aria-label="Primary" class="hidden md:block">
@@ -78,12 +78,12 @@ const nav = [
                     class:list={[
                       'font-mono text-mono-sm uppercase tracking-[0.18em] transition-colors',
                       item.key === pageKey
-                        ? 'text-accent'
-                        : 'text-ink-300 hover:text-ink-50',
+                        ? 'text-coral'
+                        : 'text-cream-500 hover:text-cream-900',
                     ]}
                   >
                     {item.key === pageKey && (
-                      <span class="text-accent mr-1" aria-hidden="true">
+                      <span class="text-coral mr-1" aria-hidden="true">
                         ●
                       </span>
                     )}
@@ -97,13 +97,13 @@ const nav = [
 
         <details class="md:hidden relative">
           <summary
-            class="list-none cursor-pointer font-mono text-mono-sm uppercase tracking-[0.18em] text-ink-200"
+            class="list-none cursor-pointer font-mono text-mono-sm uppercase tracking-[0.18em] text-cream-700"
             aria-label="Toggle menu"
           >
             menu
           </summary>
           <ul
-            class="absolute right-0 top-full mt-3 min-w-[180px] border border-ink-600 bg-ink-900 p-4 flex flex-col gap-3 z-20"
+            class="absolute right-0 top-full mt-3 min-w-[180px] border border-cream-300 bg-cream-50 p-4 flex flex-col gap-3 z-20"
           >
             {
               nav.map((item) => (
@@ -114,8 +114,8 @@ const nav = [
                     class:list={[
                       'font-mono text-mono-sm uppercase tracking-[0.18em] block',
                       item.key === pageKey
-                        ? 'text-accent'
-                        : 'text-ink-200 hover:text-accent',
+                        ? 'text-coral'
+                        : 'text-cream-700 hover:text-coral',
                     ]}
                   >
                     {item.label}
@@ -142,19 +142,19 @@ const nav = [
       <div
         class="mx-auto max-w-[1240px] px-6 md:px-10 py-10 flex flex-col md:flex-row gap-4 md:gap-8 md:items-baseline md:justify-between"
       >
-        <p class="font-mono text-mono-xs uppercase tracking-[0.16em] text-ink-400">
+        <p class="font-mono text-mono-xs uppercase tracking-[0.16em] text-cream-400">
           © 2026 Austin Copps · Built in Astro · Hosted on GitHub Pages
         </p>
         <ul class="flex flex-wrap gap-5 font-mono text-mono-xs uppercase tracking-[0.16em]">
-          <li><a class="link text-ink-200" href="mailto:austin@austincopps.com">email</a></li>
+          <li><a class="link text-cream-700" href="mailto:austin@austincopps.com">email</a></li>
           <li>
-            <a class="link text-ink-200" href="https://github.com/austincopps" target="_blank" rel="noopener"
+            <a class="link text-cream-700" href="https://github.com/austincopps" target="_blank" rel="noopener"
               >github</a
             >
           </li>
           <li>
             <a
-              class="link text-ink-200"
+              class="link text-cream-700"
               href="https://linkedin.com/in/austin-copps-06332621b"
               target="_blank"
               rel="noopener">linkedin</a
