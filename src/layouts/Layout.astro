@@ -172,6 +172,14 @@ const nav = [
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduce || !('IntersectionObserver' in window)) return;
         document.documentElement.classList.add('js-reveal');
+        const targets = Array.from(document.querySelectorAll('.reveal'));
+        // Immediately reveal anything already on screen so we never flash blank.
+        const vh = window.innerHeight;
+        targets.forEach((el) => {
+          if (el.getBoundingClientRect().top < vh * 0.95) {
+            el.classList.add('is-visible');
+          }
+        });
         const io = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -183,7 +191,9 @@ const nav = [
           },
           { rootMargin: '0px 0px -8% 0px', threshold: 0.05 }
         );
-        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+        targets.forEach((el) => {
+          if (!el.classList.contains('is-visible')) io.observe(el);
+        });
       })();
     </script>
   </body>

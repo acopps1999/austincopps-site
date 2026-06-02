@@ -5,12 +5,12 @@ const commercial = [
   {
     index: '01',
     dates: 'JAN 2026 — JUN 2026',
-    tag: 'Commercial · Client confidential',
+    tag: 'Commercial · 3-person team · Client confidential',
     title: 'Appellate brief classification platform',
     pull: '80%+ high-confidence classification across ~2,000 cases / year.',
     pullLabel: 'Production target met, with full explainability',
     narrative:
-      "Directly contracted to build the full classification pipeline for a Dallas appellate court that processes 1,600–2,000 cases per year. Architected a multi-model ensemble — GPT-4o factor analysis over the TRAP 39.1 statutory factors, plus an XGBoost confidence calibrator — that gives the court an 80%+ high-confidence classification rate while preserving full explainability for every decision. Built the entire stack solo: Python + FastAPI + async SQLAlchemy + PostgreSQL backend with Alembic migrations, a React 19 + Vite + Tailwind frontend, the Anthropic Claude Agent SDK for multi-step legal reasoning, and Docling-based PDF extraction across 40-page briefs. Shipped with production hygiene: Docker multi-stage builds, GitHub Actions CI/CD, Playwright E2E, parallel pytest, Azure Blob Storage, JWT + RBAC, and zero-shot NLP anonymization for sensitive content.",
+      "Contracted to build the full classification pipeline for a Dallas appellate court that processes 1,600–2,000 cases per year, working as one of three engineers on a tight team. Co-architected a multi-model ensemble — GPT-4o factor analysis over the TRAP 39.1 statutory factors, plus an XGBoost confidence calibrator — that gives the court an 80%+ high-confidence classification rate while preserving full explainability for every decision. Contributed across the full stack: Python + FastAPI + async SQLAlchemy + PostgreSQL backend with Alembic migrations, a React 19 + Vite + Tailwind frontend, the Anthropic Claude Agent SDK for multi-step legal reasoning, and Docling-based PDF extraction across 40-page briefs. Shipped with production hygiene: Docker multi-stage builds, GitHub Actions CI/CD, Playwright E2E, parallel pytest, Azure Blob Storage, JWT + RBAC, and zero-shot NLP anonymization for sensitive content.",
     stack: [
       'Python',
       'FastAPI',
@@ -27,7 +27,7 @@ const commercial = [
   {
     index: '02',
     dates: 'MAR 2025 — JUN 2025',
-    tag: 'Commercial · PerioProtect × Periosciences',
+    tag: 'Commercial · Solo build · PerioProtect × Periosciences',
     title: 'Periodontics product recommendation system',
     pull: '~90% per-query cost reduction. Reasoning fully transparent.',
     pullLabel: '3-stage RAG replaced by one agentic call',
@@ -46,7 +46,7 @@ const commercial = [
   {
     index: '03',
     dates: 'JAN 2026 — PRESENT',
-    tag: 'Commercial · App Store launch imminent',
+    tag: 'Commercial · Solo build · App Store launch imminent',
     title: 'Chirp — Camp emergency-response platform',
     pull: '"Emergency procedures, run from a phone, with audit-grade traceability."',
     pullLabel: 'Designed against Texas SB 1 ("Heaven\'s 27") camp-safety requirements',
@@ -114,10 +114,10 @@ import Placard from '../components/Placard.astro';
     </div>
     <div class="md:col-span-9">
       <h1 class="reveal font-display font-light text-fluid-3xl tracking-tightest text-ink-50 leading-[0.95]">
-        Three commercial apps.<br /><span class="italic">Shipped solo.</span>
+        Three commercial apps.<br /><span class="italic">End to end.</span>
       </h1>
       <p class="reveal mt-6 max-w-readable text-fluid-lg text-ink-100 leading-relaxed" style="transition-delay: 120ms;">
-        End to end — discovery, architecture, frontend, backend, mobile, deploys, and ongoing maintenance. Treat each entry as an exhibit, not a card.
+        Discovery, architecture, frontend, backend, mobile, deploys, and ongoing maintenance. Two shipped solo; the third built with a small, focused team. Treat each entry as an exhibit, not a card.
       </p>
     </div>
   </header>
