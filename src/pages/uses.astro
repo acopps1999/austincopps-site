@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    label: 'AI & agents',
+    items: [
+      { name: 'Anthropic Claude (Opus 4.7)', note: 'Daily driver. Long-horizon work.' },
+      { name: 'Claude Agent SDK', note: 'Multi-step legal reasoning, tool calling.' },
+      { name: 'MCP (Model Context Protocol)', note: 'Custom servers for specialist agents.' },
+      { name: 'OpenAI GPT-4o', note: 'Function-calling agents, classification.' },
+      { name: 'LiteLLM', note: 'Provider abstraction inside production stacks.' },
+      { name: 'n8n', note: 'Visual workflow automation when speed matters.' },
+    ],
+  },
+  {
+    label: 'Embeddings & vectors',
+    items: [
+      { name: 'Voyage', note: 'Embeddings of choice for retrieval today.' },
+      { name: 'pgvector', note: 'Lives next to the rest of the data.' },
+      { name: 'FAISS', note: 'Local indexing, R&D, fast experiments.' },
+      { name: 'Pinecone', note: 'Hosted vector DB when scale demands it.' },
+    ],
+  },
+  {
+    label: 'Languages',
+    items: [
+      { name: 'Python', note: 'Backends, agents, data work.' },
+      { name: 'TypeScript', note: 'Frontends, Node services, mobile.' },
+      { name: 'SQL', note: 'Tool-callable functions are most of the agent.' },
+    ],
+  },
+  {
+    label: 'Frameworks',
+    items: [
+      { name: 'FastAPI', note: 'Async-first. Default backend.' },
+      { name: 'Astro', note: 'This site. Static when static is right.' },
+      { name: 'React', note: 'Frontends across every commercial build.' },
+      { name: 'React Native + Expo', note: 'Mobile, cross-platform, ships fast.' },
+      { name: 'Tailwind CSS', note: 'Design system in a config file.' },
+      { name: 'Radix UI', note: 'Accessible primitives done right.' },
+    ],
+  },
+  {
+    label: 'Data / infra',
+    items: [
+      { name: 'PostgreSQL', note: 'The boring choice. Always the right one.' },
+      { name: 'Supabase', note: 'Auth, Postgres, RLS, Edge Functions.' },
+      { name: 'Azure', note: 'Blob storage, AD, enterprise comfort.' },
+      { name: 'Render', note: 'Fast path from repo to URL.' },
+      { name: 'Cloudflare R2 / Workers', note: 'Object storage, edge compute.' },
+      { name: 'Docker', note: 'Multi-stage builds. Reproducibility.' },
+      { name: 'GitHub Actions', note: 'CI/CD with no surprises.' },
+    ],
+  },
+  {
+    label: 'Mobile',
+    items: [
+      { name: 'Expo', note: 'iOS + Android from one codebase.' },
+      { name: 'expo-notifications', note: 'Push without Firebase friction.' },
+      { name: 'expo-location', note: 'Background, geofenced, battery-aware.' },
+      { name: 'Stripe React Native', note: 'PCI surface stays on device.' },
+    ],
+  },
+  {
+    label: 'Comms',
+    items: [
+      { name: 'Twilio', note: 'SMS, voice, the dependable one.' },
+      { name: 'Resend', note: 'Email that actually arrives.' },
+      { name: 'Expo Push', note: 'Mobile push, no FCM/APNs glue.' },
+      { name: 'Socket.io / WebSockets', note: 'Real-time when it matters.' },
+    ],
+  },
+  {
+    label: 'Design / dev tools',
+    items: [
+      { name: 'Figma', note: 'For the thinking-on-paper phase.' },
+      { name: 'VS Code + Claude Code', note: 'Editor of record. Pair of record.' },
+      { name: 'Linear', note: 'Personal + team tracking.' },
+    ],
+  },
+];
+---
+
+<Layout
+  pageKey="uses"
+  title="Uses — Austin Copps"
+  description="What Austin Copps reaches for when building generative-AI applications and full-stack products."
+>
+  <header class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 pb-16 md:pb-20">
+    <div class="md:col-span-3">
+      <p class="reveal font-mono text-mono-xs uppercase tracking-[0.2em] text-accent">File 05</p>
+      <p class="reveal mt-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300" style="transition-delay: 80ms;">
+        Uses
+      </p>
+    </div>
+    <div class="md:col-span-9">
+      <h1 class="reveal font-display font-light text-fluid-3xl tracking-tightest text-ink-50 leading-[0.95]">
+        What I reach for<br /><span class="italic">when building.</span>
+      </h1>
+      <p class="reveal mt-6 max-w-readable text-fluid-lg text-ink-100 leading-relaxed" style="transition-delay: 120ms;">
+        Opinions held loosely. The stack changes when something better shows up.
+      </p>
+    </div>
+  </header>
+
+  <section class="flex flex-col">
+    {
+      categories.map((cat, i) => (
+        <div
+          class="reveal grid grid-cols-1 md:grid-cols-12 gap-y-5 md:gap-x-10 border-t border-ink-700 py-10"
+          style={`transition-delay: ${i * 40}ms;`}
+        >
+          <div class="md:col-span-3">
+            <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-accent">
+              {String(i + 1).padStart(2, '0')} — {cat.label}
+            </p>
+          </div>
+          <ul class="md:col-span-9 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-10">
+            {cat.items.map((it) => (
+              <li class="grid grid-cols-12 gap-3 items-baseline">
+                <span class="col-span-12 sm:col-span-5 font-display font-light text-fluid-base text-ink-50 leading-snug">
+                  {it.name}
+                </span>
+                <span class="col-span-12 sm:col-span-7 text-fluid-sm text-ink-300 leading-relaxed">
+                  {it.note}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</Layout>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  items: string[];
+  variant?: 'chip' | 'line';
+}
+const { items, variant = 'line' } = Astro.props;
+---
+
+{
+  variant === 'chip' ? (
+    <ul class="flex flex-wrap gap-1.5">
+      {items.map((it) => (
+        <li class="chip">{it}</li>
+      ))}
+    </ul>
+  ) : (
+    <p class="font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300 leading-relaxed">
+      {items.map((it, i) => (
+        <>
+          <span>{it}</span>
+          {i < items.length - 1 && <span class="text-ink-500 mx-2">·</span>}
+        </>
+      ))}
+    </p>
+  )
+}

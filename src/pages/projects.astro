@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const commercial = [
+  {
+    index: '01',
+    dates: 'JAN 2026 — JUN 2026',
+    tag: 'Commercial · Client confidential',
+    title: 'Appellate brief classification platform',
+    pull: '80%+ high-confidence classification across ~2,000 cases / year.',
+    pullLabel: 'Production target met, with full explainability',
+    narrative:
+      "Directly contracted to build the full classification pipeline for a Dallas appellate court that processes 1,600–2,000 cases per year. Architected a multi-model ensemble — GPT-4o factor analysis over the TRAP 39.1 statutory factors, plus an XGBoost confidence calibrator — that gives the court an 80%+ high-confidence classification rate while preserving full explainability for every decision. Built the entire stack solo: Python + FastAPI + async SQLAlchemy + PostgreSQL backend with Alembic migrations, a React 19 + Vite + Tailwind frontend, the Anthropic Claude Agent SDK for multi-step legal reasoning, and Docling-based PDF extraction across 40-page briefs. Shipped with production hygiene: Docker multi-stage builds, GitHub Actions CI/CD, Playwright E2E, parallel pytest, Azure Blob Storage, JWT + RBAC, and zero-shot NLP anonymization for sensitive content.",
+    stack: [
+      'Python',
+      'FastAPI',
+      'React 19',
+      'GPT-4o',
+      'Claude Agent SDK',
+      'XGBoost',
+      'Docling',
+      'PostgreSQL',
+      'Azure',
+      'Playwright',
+    ],
+  },
+  {
+    index: '02',
+    dates: 'MAR 2025 — JUN 2025',
+    tag: 'Commercial · PerioProtect × Periosciences',
+    title: 'Periodontics product recommendation system',
+    pull: '~90% per-query cost reduction. Reasoning fully transparent.',
+    pullLabel: '3-stage RAG replaced by one agentic call',
+    narrative:
+      "Brought on after the PerioProtect / Periosciences merger to unify the two product catalogs across a single recommendation engine for sales reps and clinicians. Replaced a 3-stage RAG pipeline (15 files, embeddings, three LLM hops) with a single GPT-4o agentic search using function calling over nine SQL tool-functions — cut per-query cost by roughly 90% and made the reasoning fully transparent (users see exactly which queries ran). Built a role-aware UI in React + Tailwind + Radix + Zustand + React Query on a Supabase PostgreSQL backend with row-level security, drag-and-drop product ranking via @dnd-kit, and a feature-visibility config that gates Sales surfaces (competitive intel, pitch points) from Clinician views.",
+    stack: [
+      'React',
+      'Supabase',
+      'GPT-4o function calling',
+      'Radix',
+      'Zustand',
+      'pgvector',
+      '@dnd-kit',
+    ],
+  },
+  {
+    index: '03',
+    dates: 'JAN 2026 — PRESENT',
+    tag: 'Commercial · App Store launch imminent',
+    title: 'Chirp — Camp emergency-response platform',
+    pull: '"Emergency procedures, run from a phone, with audit-grade traceability."',
+    pullLabel: 'Designed against Texas SB 1 ("Heaven\'s 27") camp-safety requirements',
+    narrative:
+      "A React Native + FastAPI platform that lets camps build and run emergency-response workflows directly from staff smartphones. Multi-stage safety protocols auto-advance on timer, consensus, or manual confirmation, with full execution history and soft-deletes for compliance. Mobile uses Expo with background location, Shapely / GeoLib geofencing, Expo Push, and battery-aware timeout detection. Backend is FastAPI + async SQLAlchemy + PostgreSQL across 30+ tables, Cloudflare R2 for media, and WebSocket real-time messaging. Weather is multi-provider failover (NWS → OpenWeatherMap → AccuWeather), fanned out via Twilio SMS, Resend email, and Expo Push.",
+    stack: [
+      'React Native',
+      'Expo',
+      'FastAPI',
+      'PostgreSQL',
+      'Twilio',
+      'Resend',
+      'NWS',
+      'WebSockets',
+      'Cloudflare R2',
+    ],
+  },
+];
+
+const notable = [
+  {
+    index: '04',
+    dates: '2026',
+    tag: 'Internal developer platform',
+    title: 'Switchboard — agentic ops brain',
+    narrative:
+      "Always-on observe → classify → decide → act → verify loop. Monitors my own shipped products via pluggable adapters (Render, Sentry, GitHub, NWS, OpenWeather), classifies events, runs closed-loop automations, and escalates to human-in-the-loop on low confidence. Effectively my personal SRE-and-ops brain.",
+    stack: ['FastAPI', 'Postgres', 'Multi-provider adapters', 'HITL workflows'],
+  },
+  {
+    index: '05',
+    dates: '2026',
+    tag: 'Specialist agent · always-on',
+    title: 'Mechanic — long-running Claude agent',
+    narrative:
+      "Long-running Claude agent (systemd service, daily 4 AM context cleanup) backed by an MCP server over a 350 MB Ford F-150 manual corpus — Voyage embeddings into a local vector DB, semantic search via a custom search_manual MCP tool. A study in agent lifecycle, context hygiene, and tool design.",
+    stack: ['Claude Agent SDK', 'MCP', 'Voyage embeddings', 'Local vector DB', 'systemd'],
+  },
+  {
+    index: '06',
+    dates: '2024 — 2025',
+    tag: 'Internal R&D',
+    title: 'WorldsLLM — semantic search & RAG foundations',
+    narrative:
+      "Internal R&D on the embedding + retrieval stack — transformers, sentence-transformers, FAISS — that I now apply to every RAG and agentic-search build.",
+    stack: ['transformers', 'sentence-transformers', 'FAISS', 'NLP pipeline'],
+  },
+];
+
+import Placard from '../components/Placard.astro';
+---
+
+<Layout
+  pageKey="projects"
+  title="Projects — Austin Copps"
+  description="Selected projects — commercial AI applications and engineering work shipped solo by Austin Copps."
+>
+  <!-- Page header -->
+  <header class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 pb-16 md:pb-20">
+    <div class="md:col-span-3">
+      <p class="reveal font-mono text-mono-xs uppercase tracking-[0.2em] text-accent">File 03</p>
+      <p class="reveal mt-2 font-mono text-mono-xs uppercase tracking-[0.18em] text-ink-300" style="transition-delay: 80ms;">
+        Selected projects
+      </p>
+    </div>
+    <div class="md:col-span-9">
+      <h1 class="reveal font-display font-light text-fluid-3xl tracking-tightest text-ink-50 leading-[0.95]">
+        Three commercial apps.<br /><span class="italic">Shipped solo.</span>
+      </h1>
+      <p class="reveal mt-6 max-w-readable text-fluid-lg text-ink-100 leading-relaxed" style="transition-delay: 120ms;">
+        End to end — discovery, architecture, frontend, backend, mobile, deploys, and ongoing maintenance. Treat each entry as an exhibit, not a card.
+      </p>
+    </div>
+  </header>
+
+  <!-- Commercial -->
+  <section>
+    <h2 class="sr-only">Commercial applications</h2>
+    {
+      commercial.map((p) => (
+        <Placard
+          index={p.index}
+          dates={p.dates}
+          tag={p.tag}
+          title={p.title}
+          stack={p.stack}
+          pull={p.pull}
+          pullLabel={p.pullLabel}
+        >
+          {p.narrative}
+        </Placard>
+      ))
+    }
+  </section>
+
+  <!-- Divider + Notable engineering -->
+  <section class="mt-24 md:mt-32 pt-16 border-t border-ink-700">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 mb-6">
+      <div class="md:col-span-3">
+        <p class="reveal font-mono text-mono-xs uppercase tracking-[0.2em] text-accent">Annex</p>
+      </div>
+      <div class="md:col-span-9">
+        <h2 class="reveal font-display font-light text-fluid-2xl tracking-tightest text-ink-50">
+          Notable engineering work.
+        </h2>
+        <p class="reveal mt-3 max-w-readable text-fluid-base text-ink-200 leading-relaxed">
+          Side builds I run on myself — the kind of work that compounds into client engagements.
+        </p>
+      </div>
+    </div>
+
+    {
+      notable.map((p) => (
+        <Placard
+          index={p.index}
+          dates={p.dates}
+          tag={p.tag}
+          title={p.title}
+          stack={p.stack}
+        >
+          {p.narrative}
+        </Placard>
+      ))
+    }
+  </section>
+</Layout>

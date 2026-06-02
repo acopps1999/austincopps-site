@@ -1,0 +1,17 @@
+---
+interface Props {
+  accent?: boolean;
+  delay?: number;
+}
+const { accent = false, delay = 0 } = Astro.props;
+---
+
+<p
+  class:list={[
+    'reveal font-mono text-mono-xs uppercase tracking-[0.18em]',
+    accent ? 'text-accent' : 'text-ink-300',
+  ]}
+  style={delay ? `transition-delay: ${delay}ms;` : undefined}
+>
+  <slot />
+</p>
