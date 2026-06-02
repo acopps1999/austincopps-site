@@ -42,7 +42,14 @@
 }
 
 @layer components {
+  /* Visible by default; the layout script adds `.js-reveal` on <html>
+     once the IntersectionObserver is wired, which hides un-revealed
+     items so the entrance animation has somewhere to come from. */
   .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .js-reveal .reveal {
     opacity: 0;
     transform: translateY(14px);
     transition:
@@ -50,7 +57,7 @@
       transform 700ms cubic-bezier(0.2, 0.6, 0.2, 1);
     will-change: opacity, transform;
   }
-  .reveal.is-visible {
+  .js-reveal .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }

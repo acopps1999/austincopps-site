@@ -166,13 +166,12 @@ const nav = [
 
     <script is:inline>
       // Fade-up reveals on scroll; respects prefers-reduced-motion.
+      // Reveals are visible by default; we only opt into the animation
+      // when JS is alive *and* the user hasn't asked for reduced motion.
       (() => {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const targets = document.querySelectorAll('.reveal');
-        if (reduce || !('IntersectionObserver' in window)) {
-          targets.forEach((el) => el.classList.add('is-visible'));
-          return;
-        }
+        if (reduce || !('IntersectionObserver' in window)) return;
+        document.documentElement.classList.add('js-reveal');
         const io = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -184,7 +183,7 @@ const nav = [
           },
           { rootMargin: '0px 0px -8% 0px', threshold: 0.05 }
         );
-        targets.forEach((el) => io.observe(el));
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
       })();
     </script>
   </body>
