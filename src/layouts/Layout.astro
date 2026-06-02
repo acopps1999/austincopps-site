@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  pageKey?: 'about' | 'work' | 'projects' | 'playground' | 'uses';
+  pageKey?: 'about' | 'work' | 'projects' | 'uses';
 }
 
 const {
@@ -17,7 +17,6 @@ const nav = [
   { href: '/', key: 'about', label: 'about' },
   { href: '/work', key: 'work', label: 'work' },
   { href: '/projects', key: 'projects', label: 'projects' },
-  { href: '/playground', key: 'playground', label: 'playground' },
   { href: '/uses', key: 'uses', label: 'uses' },
 ] as const;
 ---
@@ -143,12 +142,12 @@ const nav = [
         class="mx-auto max-w-[1240px] px-6 md:px-10 py-10 flex flex-col md:flex-row gap-4 md:gap-8 md:items-baseline md:justify-between"
       >
         <p class="font-mono text-mono-xs uppercase tracking-[0.16em] text-cream-400">
-          © 2026 Austin Copps · Built in Astro · Hosted on GitHub Pages
+          © 2026 Austin Copps
         </p>
         <ul class="flex flex-wrap gap-5 font-mono text-mono-xs uppercase tracking-[0.16em]">
           <li><a class="link text-cream-700" href="mailto:austin@austincopps.com">email</a></li>
           <li>
-            <a class="link text-cream-700" href="https://github.com/austincopps" target="_blank" rel="noopener"
+            <a class="link text-cream-700" href="https://github.com/acopps1999" target="_blank" rel="noopener"
               >github</a
             >
           </li>
