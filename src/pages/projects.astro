@@ -4,6 +4,29 @@ import Layout from '../layouts/Layout.astro';
 const commercial = [
   {
     index: '01',
+    dates: '2025 — PRESENT',
+    tag: 'Enterprise · Built at Worlds',
+    title: 'Worlds QA Platform',
+    pull: '"AI auditing AI — with humans in the loop and a rubric that learns from every override."',
+    pullLabel: '41 MCP tools · 130+ API routes · multi-tenant from day one',
+    narrative:
+      "An enterprise quality-assurance platform for auditing the accuracy of AI agents that detect business-critical events in video — built end to end as a multi-tenant Next.js application with an embedded AI review pipeline, real-time analytics, and a Model Context Protocol server. Computer-vision agents in production generate millions of detections — gate violations, safety incidents, equipment events. The platform gives QA analysts the tools to review them at scale: validate or invalidate events, correct bounding boxes and timestamps, attribute root causes, and feed the results back into an analytics layer that quantifies each agent's accuracy over time. A Claude-driven review agent processes events autonomously using per-organization context rubrics, then surfaces its decisions to human auditors for confirmation or override — overrides feed back into the rubrics, creating a learning loop. The embedded MCP server exposes 41 tools over Streamable HTTP so any Claude Code user can run review sessions, query analytics, generate golden datasets, and trigger reports without leaving their terminal. Strict multi-tenant isolation at the database, API, and role layers; video-aware primitives (HLS streaming, frame extraction, detection-overlay rendering) throughout.",
+    stack: [
+      'Next.js 15',
+      'TypeScript',
+      'React',
+      'Tailwind',
+      'PostgreSQL',
+      'NextAuth',
+      'Anthropic SDK',
+      'MCP',
+      'Recharts',
+      'Docker',
+      'Azure Container Apps',
+    ],
+  },
+  {
+    index: '02',
     dates: 'JAN 2026 — JUN 2026',
     tag: 'Commercial · 3-person team · Client confidential',
     title: 'Appellate brief classification platform',
@@ -25,7 +48,7 @@ const commercial = [
     ],
   },
   {
-    index: '02',
+    index: '03',
     dates: 'MAR 2025 — JUN 2025',
     tag: 'Commercial · PerioProtect × Periosciences',
     title: 'Periodontics product recommendation system',
@@ -44,7 +67,7 @@ const commercial = [
     ],
   },
   {
-    index: '03',
+    index: '04',
     dates: 'JAN 2026 — PRESENT',
     tag: 'Commercial · App Store launch imminent',
     title: 'Chirp — Camp emergency-response platform',
@@ -68,7 +91,7 @@ const commercial = [
 
 const notable = [
   {
-    index: '04',
+    index: '05',
     dates: '2026',
     tag: 'Internal developer platform',
     title: 'Switchboard — agentic ops brain',
@@ -77,7 +100,7 @@ const notable = [
     stack: ['FastAPI', 'Postgres', 'Multi-provider adapters', 'HITL workflows'],
   },
   {
-    index: '05',
+    index: '06',
     dates: '2026',
     tag: 'Specialist agent · always-on',
     title: 'Mechanic — long-running Claude agent',
@@ -86,7 +109,7 @@ const notable = [
     stack: ['Claude Agent SDK', 'MCP', 'Voyage embeddings', 'Local vector DB', 'systemd'],
   },
   {
-    index: '06',
+    index: '07',
     dates: '2024 — 2025',
     tag: 'Internal R&D',
     title: 'WorldsLLM — semantic search & RAG foundations',
